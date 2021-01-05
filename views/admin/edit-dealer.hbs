@@ -1,0 +1,32 @@
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="text-center">Edit Dealer</h2>
+                <form action="/admin/edit-dealer/{{dealer._id}}" method="POST"  >
+                    <label for="">Name</label>
+                    <input type="text" name="Name" class="form-control" value="{{dealer.Name}}">
+
+                      <label for="">Password</label>
+                    <input type="password" name="Password" class="form-control" value="{{dealer.Password}}">
+  
+                    <label for="">Address</label>
+                    <input type="text" name="Address" class="form-control" value="{{dealer.Address}}">
+  
+                    <label for="">Storename</label>
+                    <input type="text" name="Storename" class="form-control" value="{{dealer.Storename}}">
+  
+                    <label for="">Extra Info</label>
+                    <input type="text" name="Extrainfo" class="form-control" value="{{dealer.Extrainfo}}">
+
+                      <label for="">Phone</label>
+                    <input type="number" name="Phone" class="form-control" value="{{dealer.Phone}}">
+               
+  
+                    <button type="submit" class="btn btn-success mt-4">Submit</button>
+                 
+                </form>
+            </div>
+        </div>
+    </div>
+  </section>

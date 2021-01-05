@@ -1,0 +1,52 @@
+ {{!-- <div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">Login</h2>
+            <form action="/login" method="POST">
+                {{#if loginErr}}
+                <p class="error">❌Invalid username or password</p>
+                {{/if}}
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" name="Email" placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="Password" placeholder="Password">
+                </div>
+                <a href="/signup">Create new account ?</a>
+                <button type="submit" class="btn btn-primary float-right">Login</button>
+            </form>
+        </div>
+    </div>
+</div>  --}}
+
+
+ <section class="container-fluid bg">
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-3">
+            <form class="form-container" action="/login" method="POST">
+                       <h3 style="font-weight: bold;">Login to your Account</h2>
+                       <br>
+             {{#if loginErr}}
+                <p class="error">❌Invalid username or password</p>
+                {{/if}}
+                <div class="form-group">
+         
+                    <label for="exampleInputEmail1" style="font-weight: bold;">Email address</label>
+                    <input type="email" class="form-control" name="Email"     id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" style="font-weight:bold;">Password</label>
+                    <input type="password" class="form-control" name="Password"     id="exampleInputPassword1" placeholder="Password">
+                </div>
+               
+                 <a href="/signup">Create new account ?</a>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+        </section>
+    </section>
+</section> 

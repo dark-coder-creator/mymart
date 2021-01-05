@@ -1,0 +1,51 @@
+{{!-- <div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class="text-center">Dealer Login 👥</h2>
+            <form action="/dealers/login" method="POST"> 
+             {{#if loginErr}}
+                 <p class="error">❌Invalid username or password</p>
+            {{/if}} 
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="Name" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="Password" placeholder="Password">
+                </div>
+             
+                <button type="submit" class="btn btn-primary float-right">Login</button>
+            </form>
+        </div>
+    </div>
+</div> --}}
+
+  <div class="container mt-5">
+<h1 class="text-center" style="font-weight:bold;">Dealer Login 👥</h1>
+
+<div class="container pt-3">
+  <div class="row justify-content-sm-center">
+    <div class="col-sm-6 col-md-4">
+  
+      
+          <form class="form-signin" action="/dealers/login" method="POST">
+           {{#if loginErr}}
+                 <p class="error"><h3>❌Invalid username or password</h3></p>
+            {{/if}}
+            <input type="text" class="form-control mb-2" name="Name" placeholder="Name" required autofocus>
+            <input type="password" class="form-control mb-2" name="Password" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block mb-1" type="submit">Login</button>
+            <label class="checkbox float-left">
+              <input type="checkbox" value="remember-me">
+              Remember me
+            </label>
+            <a href="#" class="float-right">Need help?</a>
+          </form>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</div>
+</div>  
