@@ -74,10 +74,10 @@
 <div class="main2">
   
   <!-- Actual search box -->
-  <div class="form-group has-search">
+  {{!-- <div class="form-group has-search">
     <span class="fa fa-search form-control-feedback"></span>
     <input type="text" class="form-control" placeholder="Search">
-  </div>
+  </div> --}}
   
   <!-- Another variation with a button -->
   {{!-- <div class="input-group">
@@ -98,7 +98,7 @@
 
 <section>
     
-    <div class="container mt-5">
+    {{!-- <div class="container mt-5">
 
 
         <div class="row">
@@ -111,14 +111,41 @@
                     <div class="card-body">
                         <h5 class="card-title">{{this.Name}}</h5>
                         <p class="card-text">{{this.Description}}</p>
-                         <p class="card-text">₹{{this.Price}}</p>
+                         <p class="card-text">{{this.Price}}</p>
                           <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to Cart</button>
                     </div>
                 </div>
             </div>
          {{/each}}
         </div>
+    </div> --}}
+
+    <div class="container mt-2">
+<!--   <div class="card card-block mb-2">
+    <h4 class="card-title">Card 1</h4>
+    <p class="card-text">Welcom to bootstrap card styles</p>
+    <a href="#" class="btn btn-primary">Submit</a>
+  </div>   -->
+  <div class="row">
+    {{#each products}}
+    <div class="col-md-3 col-sm-6 item p-3">
+      <div class="card item-card card-block">
+    
+    <img src="/product-images/{{this._id}}.jpg" alt="Photo of sunset">
+        <h5 class="item-card-title mt-3 mb-3">{{this.Name}}</h5>
+     
+        <p class="card-text">₹{{this.Price}}</p> 
+         <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to Cart</button>
+  </div>
     </div>
+     {{/each}}
+    </div>
+  
+   
+  </div>
+  
+</div>
+
 </section>
 <!DOCTYPE html>
 <html lang="en">
@@ -189,6 +216,7 @@
              <li><a href="https://www.linkedin.com/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
              <li><a href="https://www.instagram.com/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
              <li><a href="#" class="icoTelegram" title="Telegram"><i class="fa fa-telegram"></i></a></li>
+             <li><a href="" class="icoWhatsapp" title="Whatsapp"><i class="fa fa-whatsapp"></i></a></li>
             </ul>				
 		</div>
     </div>
