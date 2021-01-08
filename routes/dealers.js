@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var dealerHelpers=require('../helpers/dealer-helpers')
 var productHelpers=require('../helpers/product-helpers')
+var userHelpers=require('../helpers/user-helpers')
 //this error is for accessing dashboard middleware
 const verifyLogin=(req,res,next)=>{
   if(req.session.loggedIn) {
@@ -138,5 +139,9 @@ router.get('/view-users',async function(req, res, next) {
     })
    
  });
- 
+ router.get('/view-order-products/:id',async(req,res)=>{
+  let products=await userHelpers.getOrderProducts(req.params.id)
+  console.log(products)
+  res.render('dealers/view-order-products',{dealer:true,products})
+})
 module.exports = router;
