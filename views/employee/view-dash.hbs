@@ -1,0 +1,47 @@
+<div class="sidebar-container">
+  <div class="sidebar-logo">
+    Dashboard
+  </div>
+  <ul class="sidebar-navigation">
+      {{#if user}}
+    <li>
+      <a href="/employee/all-dealers">
+        <i class="fa fa-tachometer" aria-hidden="true"></i>All Dealers
+      </a>
+    </li>
+    {{/if}}
+    <li>
+      <a href="https://boiling-taiga-59438.herokuapp.com/2bd63952-5549-4638-9cbe-da80cd562c3a">
+        <i class="fa fa-home" aria-hidden="true"></i> Contact Dealers
+      </a>
+    </li>
+
+    <li class="header">Another Menu</li>
+    
+    <li>
+      <a href="#">
+        <i class="fa fa-cog" aria-hidden="true"></i> Settings
+      </a>
+    </li>
+    <li>
+      <a href="/employee/information">
+        <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="content-container">
+
+  <div class="container-fluid">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <h1>Welcome {{user.Name}}</h1>
+      <p>This dashboard is a quick information to explain between dealers and Employees.It also adapts to your viewport and device.</p>
+      <p>To see the more information click Information on sidebar</p>
+      
+    </div>
+
+  </div>
+</div>

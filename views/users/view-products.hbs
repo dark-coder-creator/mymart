@@ -9,6 +9,7 @@
             <li data-target="#carousel-2" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-2" data-slide-to="1"></li>
             <li data-target="#carousel-2" data-slide-to="2"></li>
+            
         </ol>
         <div class="carousel-inner" role="listbox">
           
@@ -18,11 +19,11 @@
                  <img src="/product-images/vegetables.jpg" alt="responsive image" class="d-block img-fluid">
 
                     <div class="carousel-caption">
-                        <div>
+                        {{!-- <div>
                             <h2>Digital Craftsmanship</h2>
                             <p>We meticously build each site to get results</p>
                             <span class="btn btn-sm btn-outline-secondary">Learn More</span>
-                        </div>
+                        </div> --}}
                     </div>
                 </a>
             </div>
@@ -31,14 +32,14 @@
           
             <div class="carousel-item">
                  {{!-- <a href="https://bootstrapcreative.com/">  --}}
-                 <img src="/product-images/spinach.jpg" alt="responsive image" class="d-block img-fluid">
+                 <img src="/product-images/coconut-water-on-leaf.jpg" alt="responsive image" class="d-block img-fluid">
 
                     <div class="carousel-caption justify-content-center align-items-center">
-                        <div>
+                        {{!-- <div>
                             <h2>Every project begins with a sketch</h2>
                             <p>We work as an extension of your business to explore solutions</p>
                             <span class="btn btn-sm btn-outline-secondary">Our Process</span>
-                        </div>
+                        </div> --}}
                     </div>
                 </a>
             </div>
@@ -50,11 +51,11 @@
 
 
                     <div class="carousel-caption justify-content-center align-items-center">
-                        <div>
+                        {{!-- <div>
                             <h2>Performance Optimization</h2>
                             <p>We monitor and optimize your site's long-term performance</p>
                             <span class="btn btn-sm btn-secondary">Learn How</span>
-                        </div>
+                        </div> --}}
                     </div>
                 </a>
             </div>
@@ -133,9 +134,10 @@
     
     <img src="/product-images/{{this._id}}.jpg" alt="Photo of sunset">
         <h5 class="item-card-title mt-3 mb-3">{{this.Name}}</h5>
-     
-        <p class="card-text">₹{{this.Price}}</p> 
-         <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to Cart</button>
+        
+        <p class="card-text" style="font-weight: bold;">₹{{this.Price}}</p> 
+       
+         <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">🛒 Add to Cart</button>
   </div>
     </div>
      {{/each}}
@@ -168,7 +170,7 @@
       <div class="col-md-3 col-sm-6">
         <!--Column1-->
         <div class="footer-pad">
-          <h4>Heading 1</h4>
+          <h4>About</h4>
           <ul class="list-unstyled">
             <li><a href="#"></a></li>
             <li><a href="#">Payment Center</a></li>
@@ -182,7 +184,7 @@
       <div class="col-md-3 col-sm-6">
         <!--Column1-->
         <div class="footer-pad">
-          <h4>Heading 2</h4>
+          <h4>Service</h4>
           <ul class="list-unstyled">
             <li><a href="#">Website Tutorial</a></li>
             <li><a href="#">Accessibility</a></li>
@@ -196,7 +198,7 @@
       <div class="col-md-3 col-sm-6">
         <!--Column1-->
         <div class="footer-pad">
-          <h4>Heading 3</h4>
+          <h4>Emergency</h4>
           <ul class="list-unstyled">
             <li><a href="#">Parks and Recreation</a></li>
             <li><a href="#">Public Works</a></li>

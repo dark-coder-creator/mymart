@@ -3,8 +3,9 @@ const { response } = require('../app');
 var router = express.Router();
 var adminHelpers=require('../helpers/admin-helpers')
 var dealerHelpers=require('../helpers/dealer-helpers')
+var userHelpers=require('../helpers/user-helpers')
 var productHelpers=require('../helpers/product-helpers')
-
+var employeeHelpers=require('../helpers/employee-helpers')
 //middleware function for entering nodejs
 const verifyLogin=(req,res,next)=>{
   if(req.session.loggedIn) {
@@ -25,7 +26,7 @@ router.get('/', function(req, res, next) {
   }
   else
   {
-    res.render('admin/login',{"loginErr":req.session.userLoginErr,dealer:true})
+    res.render('admin/login',{"loginErr":req.session.userLoginErr,admin:true})
     req.session.userLoginErr=false
   }
 });
@@ -80,7 +81,7 @@ router.post('/signup',(req,res)=>{
     console.log(noofusers)
     let noofdealers=await adminHelpers.getDealers()
     console.log(noofdealers)
-    let nooforders=await adminHelpers.getOrders()
+    let nooforders=await adminHelpers.getEmployees()
     console.log(nooforders)
     let user=req.session.user
     console.log(user)
@@ -105,6 +106,13 @@ router.post('/signup',(req,res)=>{
         res.redirect('/admin/dashboard')
       })
     })  
+    router.get('/delete-user/:id',(req,res)=>{
+      let userId=req.params.id
+      console.log(userId)
+      userHelpers.deleteUser(userId).then((response)=>{
+        res.redirect('/admin/all-users')
+      })
+    })  
     //TO EDIT A DEALER
     router.get('/edit-dealer/:id',async (req,res)=>{
       let dealer=await dealerHelpers.getDealerDetails(req.params.id)
@@ -122,5 +130,13 @@ router.post('/signup',(req,res)=>{
     router.get('/all-products',async (req,res)=>{
       let products=await productHelpers.getAllProducts()
       res.render('admin/all-products',{products,admin:true})
+    })
+    router.get('/all-users',async (req,res)=>{
+      let users=await dealerHelpers.getAllUsers()
+      res.render('admin/all-users',{users,admin:true})
+    })
+    router.get('/all-employees',async (req,res)=>{
+      let employees=await employeeHelpers.getAllEmployees()
+      res.render('admin/all-employees',{employees,admin:true})
     })
 module.exports = router;

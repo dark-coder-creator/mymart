@@ -6,6 +6,7 @@ var logger = require('morgan');
 var adminRouter=require('./routes/admin')
 var userRouter = require('./routes/users');
 var dealerRouter = require('./routes/dealers');
+var employeeRouter=require('./routes/employee')
 var hbs=require('express-handlebars')
 var db=require('./config/connection')
 var session=require('express-session')
@@ -31,7 +32,8 @@ db.connect((err)=>{
 app.use('/', userRouter);
 app.use('/admin',adminRouter)
 app.use('/dealers', dealerRouter);
-
+//created a router for employees
+app.use('/employee',employeeRouter)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

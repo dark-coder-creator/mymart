@@ -1,4 +1,4 @@
-<section>
+{{!-- <section>
     <div class="container mt-5">
         <div class="row">
             {{#each products}}
@@ -21,4 +21,31 @@
             {{/each}}
         </div>
     </div>
-</section>
+</section> --}}
+<section>
+  <div class="container mt-2">
+<!--   <div class="card card-block mb-2">
+    <h4 class="card-title">Card 1</h4>
+    <p class="card-text">Welcom to bootstrap card styles</p>
+    <a href="#" class="btn btn-primary">Submit</a>
+  </div>   -->
+  <div class="row">
+    {{#each products}}
+    <div class="col-md-3 col-sm-6 item p-3">
+      <div class="card item-card card-block">
+    
+    <img src="/product-images/{{this.product._id}}.jpg" alt="">
+   
+         <h5>Orderid:{{this._id}}</h5>
+        <h5 class="item-card-title mt-3 mb-3">{{this.product.Name}}</h5>
+         
+        <p class="card-text" style="font-weight: bold;">₹{{this.product.Price}}</p> 
+        <h5>Quantity(kg):{{this.quantity}}</h5>
+  </div>
+    </div>
+     {{/each}}
+    </div>
+  
+   
+  </div>
+  </section>

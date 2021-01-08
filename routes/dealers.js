@@ -128,15 +128,15 @@ router.get('/view-users',async function(req, res, next) {
 
 });
  router.get('/view-orders',async function(req, res, next) {
-  // let products=await dealerHelpers.getDealerProducts(req.session.user._id)
-  // console.log(products)
+   let products=await dealerHelpers.getDealerProducts()
+   console.log(products)
 
-  //  console.log(details)
+    
    dealerHelpers.getAllOrders().then((orders)=>{
    
-     res.render('dealers/view-orders',{dealer:true,orders});
+     res.render('dealers/view-orders',{dealer:true,orders,products});
     })
    
  });
-
+ 
 module.exports = router;

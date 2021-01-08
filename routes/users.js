@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const productHelpers=require('../helpers/product-helpers')
 const userHelpers=require('../helpers/user-helpers')
+ //for otp authentication
   // const accountSid = 'AC141eb6306753707757e44642d1261e9c'; 
   // const authToken = '4eaaa42616f41bcae31f8f559cc30a6c'; 
   // const client = require('twilio')(accountSid, authToken); 
@@ -149,7 +150,7 @@ router.get('/orders',async(req,res)=>{
 router.get('/view-order-products/:id',async(req,res)=>{
   let products=await userHelpers.getOrderProducts(req.params.id)
   console.log(products)
-  res.render('users/view-order-products',{user:req.session.user,products,dealer:true})
+  res.render('users/view-order-products',{user:req.session.user,products})
 })
 
 router.post('/verify-payment',(req,res)=>{
@@ -177,5 +178,9 @@ router.get('/cart1',(req,res)=>{
 })
 router.get('/cart2',(req,res)=>{
   res.render('users/cart2')
+})
+router.get('/products',async (req,res)=>{
+  let products=await productHelpers.getAllProducts()
+  res.render('users/products',{user:req.session.user,products})
 })
 module.exports = router;

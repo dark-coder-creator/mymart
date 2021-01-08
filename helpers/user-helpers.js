@@ -262,6 +262,14 @@ module.exports={
              
         })
       },
+      deleteUser:(dealerId)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.USER_COLLECTION).removeOne({_id:objectId(dealerId)}).then((response)=>{
+                console.log(response)
+                resolve(response)
+            })
+        })
+    },
       getOrderProducts:(orderId)=>{
         return new Promise(async (resolve,reject)=>{
           let orderItems=await db.get().collection(collection.ORDER_COLLECTION).aggregate([

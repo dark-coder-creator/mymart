@@ -129,18 +129,15 @@ module.exports={
            })
          })
        },
-        getDealerProducts:(dealerId)=>{
+        getDealerProducts:()=>{
           return new Promise(async(resolve,reject)=>{
            let details=await db.get().collection(collection.DEALERS_COLLECTION).aggregate([
                   {
-                     $match:{dealer:objectId(dealerId)}
-                  },
-                  {
                     $lookup:{
                       from:collection.PRODUCTS_COLLECTION,
-                      localField:'item',
+                      localField:'product_id',
                       foreignField:'_id',
-                      as:'product'
+                      as:'products'
                    }
                   }
                 ]).toArray();

@@ -1,0 +1,38 @@
+<section>
+    <div class="container">
+        
+    <h1>List Of All Dealers</h1>
+        {{!-- <div class="row mt-5">
+            <a href="/admin/add-products" class="btn btn-success ml-auto mb-5">Add Product</a>
+        </div> --}}
+         <table class="table mt-5" id="dealersTable">
+  <thead>
+    <tr>
+      
+      <th scope="col">Name</th>
+      <th scope="col">Storename</th>
+      <th scope="col">Phone</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      {{#each dealers}}
+    <tr>
+     
+      <td>{{this.Name}}</td>
+     
+      <td>{{this.Storename}}</td>
+      <td>{{this.Phone}}</td>
+   
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+    </div>
+</section>
+<script>
+  $(function () {
+ $('#dealersTable').DataTable();
+  })
+</script>

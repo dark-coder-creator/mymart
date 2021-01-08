@@ -69,9 +69,9 @@ module.exports = {
        resolve(noofdealers)
     })
   },
-  getOrders:()=>{
+  getEmployees:()=>{
     return new Promise(async (resolve,reject)=>{
-      let nooforders=await db.get().collection(collection.ORDER_COLLECTION).countDocuments()
+      let nooforders=await db.get().collection(collection.EMPLOYEE_COLLECTION).countDocuments()
       resolve(nooforders)
     })
   },
