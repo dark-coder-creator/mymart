@@ -3,7 +3,7 @@ var router = express.Router();
 const productHelpers=require('../helpers/product-helpers')
 const userHelpers=require('../helpers/user-helpers')
  //for otp authentication
-  //
+
 const verifyLogin=(req,res,next)=>{
   if(req.session.loggedIn) {
     next()
