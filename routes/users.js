@@ -3,9 +3,7 @@ var router = express.Router();
 const productHelpers=require('../helpers/product-helpers')
 const userHelpers=require('../helpers/user-helpers')
  //for otp authentication
-  // const accountSid = 'AC141eb6306753707757e44642d1261e9c'; 
-  // const authToken = '4eaaa42616f41bcae31f8f559cc30a6c'; 
-  // const client = require('twilio')(accountSid, authToken); 
+  //
 const verifyLogin=(req,res,next)=>{
   if(req.session.loggedIn) {
     next()
